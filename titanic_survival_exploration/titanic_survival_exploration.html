@@ -13296,7 +13296,15 @@ DF1SR66LiA0p7k39JZO5NPDZQpckqQI8hi5JUgWY0CVJqgATuiRJFWBClySpAkzokiRVgAldkqQK
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer</strong>: 80.70%</p>
+<p><strong>Answer</strong>:</p>
+<p>As in the prediction_2, almost all the female passengers were survived . So i tried to take that small female population which did not survive just to make prediction better. I considered age and combined with Pclass. As Pclass will definitely play major role when it comes for special treatment in any real world scenario. I tried the same approach with above two features with male passengers.</p>
+<p>I definitely think that age and Pclass plays major role in this scenario. I looked at feature "Fare" as well , but it was not that helpful.</p>
+<p>I considered below for female passengers :-
+nonsurvival if passenger['Age']&gt;20 and passenger['Age']&lt;50 and passenger['Pclass']==3</p>
+<p>for male passengers:- 
+males passengers with age below 10 are survived as in prediction_2. Moreover,
+passenger['Age']&gt;30 and passenger['Age']&lt;40 and passenger['Pclass']==1 also survived</p>
+<p>Predictions have an accuracy of 80.70%.</p>
 
 </div>
 </div>
