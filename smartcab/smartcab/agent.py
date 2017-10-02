@@ -107,9 +107,6 @@ class LearningAgent(Agent):
 
         #maxQ = None
         #return maxQ 
-        """
-        maxAction = max(self.Q[state], key = lambda x: self.Q[state][x])
-        maxQ = self.Q[state][maxAction]"""
         
         maxQ = max(self.Q[state].values())
         maxQ_actions = []
@@ -140,9 +137,6 @@ class LearningAgent(Agent):
         if not state in self.Q:
             self.Q[state] = self.template_q.copy()
             
-        """if state not in self.Q:
-            self.Q[state] = {'left': 0, 'right':0, 'forward':0, None:0}"""
-
 
         return
     
@@ -170,14 +164,7 @@ class LearningAgent(Agent):
         else:
             maxQ, maxQ_actions = self.get_maxQ(state)
             action = random.choice(maxQ_actions)
-            
-        """if self.learning and random.random() > self.epsilon:
-            maxVal = self.get_maxQ(state)
-
-            #choose randomly if there are more than one max values
-            pos_actions = [act for act in pos_actions if pos_actions[act] == maxVal]
-            action = random.choice(pos_actions)"""
-        
+                    
         return action
 
 
@@ -195,9 +182,6 @@ class LearningAgent(Agent):
         if self.learning:
             self.Q[state][action] = reward * self.alpha + self.Q[state][action] * (1 - self.alpha)
             
-        """old_value = self.Q[state][action]
-        if self.learning:
-            self.Q[state][action] = (1-self.alpha)*old_value + self.alpha*(reward)    """
             
         return
 
